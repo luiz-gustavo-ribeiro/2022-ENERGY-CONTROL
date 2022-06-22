@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }}">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ENERGY CONTROL | Banco de dados</title>
+    </head>
+    
+    <body>
+        <header id="faixa">
+            <a href="/">
+                <img src=" {{ url_for('static', filename='img/minilogo.png') }}"alt="">
+            </a>
+            <h1>
+               BANCO DE DADOS.
+            </h1>
+        </header>
+
+        <section id="lista_equipamentos">
+            <table>
+                <h3>Lista de Equipamentos</h3>
+
+                     <tbody>
+                           {% for e in equipamentos %}
+                              <tr>
+                                    <td>{{e.id}}</td>
+                                    <td>{{e.nome}}</td>
+                                    <td>{{e.consumo}}</td>
+                                    <td>{{e.tempo}}</td>   
+                                </tr>
+                            {% endfor %}
+                     </tbody>
+            </table>        
+        </section>  
+    </body>
+</html>

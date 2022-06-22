@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }}">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> ENERGY CONTROL | Seu eletrodoméstico</title>
+    </head>
+    
+    <body>
+        <header id="faixa">
+            <a href="/">
+                <img src=" {{ url_for('static', filename='img/minilogo.png') }}"alt="">
+            </a>
+            <h1>
+               Situação do seu eletrodoméstico.
+            </h1>
+        </header>
+
+        <section id="card">
+            <h2>
+                Dados do seu eletrodoméstico<br><br>
+                Nome: {{ un }} <br><br>
+                Consumo: O seu eletrodoméstico está consumindo {{ meduc }} kwh a cada hora de funcionamento. <br>
+            </h2>
+            <h3>
+                Em nosso BD temos as seguintes médias:<br><br>
+                Televisão: {{ medtv }} <br>
+                Geladeira: {{ medge }} <br>
+                Lava Roupas: {{ medlr }} <br>
+                Micro-ondas: {{ medmo }} <br>
+                Ar Condicionado: {{ medac }} <br><br>
+                Os valores estão em kWh a cada hora de funcionamento.
+            </h3>
+            <h4>
+                Conclusão: {{ conc }} <br>
+            </h4>
+        </section>
+    </body>
+</html>

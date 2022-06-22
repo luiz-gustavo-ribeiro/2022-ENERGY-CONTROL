@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<link rel="stylesheet" href=" {{ url_for('static', filename='css/styles.css') }}">
+
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ENERGY CONTROL | Novo Equipamento</title>
+    </head>
+    
+    <body>
+        <header id="faixa">
+            <a href="/">
+                <img src=" {{ url_for('static', filename='img/minilogo.png') }}"alt="logotipo">
+            </a>
+            <h1>
+                Cadastre seu eletrodoméstico.
+            </h1>
+        </header>
+
+        <section id="texto">
+                Siga os passos abaixo: <br>
+                1. Escolha um dos eletrodomésticos da lista abaixo.<br>
+                2. Informe o consumo registrado em seu medidor. <br>
+                3. Informe o tempo que durou a medição. <br>
+                4. Clique em cadastrar.<br>
+                5. Clique em comparar.<br>
+        </section>
+
+
+                <section id="card1">
+                    <form name="form" action="/new" method="POST">
+                        <div>
+                            <input type="radio" id="tev" name="nome" value="Televisão">
+                            <label for="tev">Televisão</label><br><br>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="gel" name="nome" value="Geladeira">
+                            <label for="gel">Geladeira</label><br><br>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="lav" name="nome" value="Lava Roupas">
+                            <label for="lav">Lava Roupas</label><br><br>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="mic" name="nome" value="Microondas">
+                            <label for="mic">Micro-ondas</label><br><br>
+                        </div>
+
+                        <div>
+                            <input type="radio" id="arc" name="nome" value="Ar Condicionado">
+                            <label for="arc">Ar condicionado</label><br>
+                        </div>                    
+                        
+                        
+                        <div class="label-float1">
+                            <br>  
+                            <input type="number" name="consumo" id="consumo">
+                            <label for="consumo">Consumo (em Kwh)</label>
+                        </div>
+                    
+                        <div class="label-float2">
+                            <br>
+                            <input type="number" name="tempo" id="tempo">
+                            <label for="tempo">Tempo (em horas)</label>
+                        </div>
+
+                       <div class="justify-center">
+                            <button id="bt1" type = "submit" >Cadastrar</button>
+                        </div> 
+                    </form>
+                </section>
+
+            <section id="comp">
+                <a href="/resp"> <button id="bt2" type = "submit">RESULTADO</button></a>
+            </section>
+
+        <script>
+            document.getElementById("bt1").style.visibility = "hidden";
+            //document.getElementById("bt2").style.visibility = "hidden";
+            //alert(document.getElementById("myP").style.visibility);
+
+
+            var rad = document.form.nome;
+            for (var i = 0; i < rad.length; i++) {
+               rad[i].onclick = function() {
+                  selecao(this);
+                }
+            };
+            
+            function selecao() {
+              alert("Eletrodoméstico selecionado com sucesso!!");
+              //document.getElementById("bt2").style.visibility = "visible";
+              document.getElementById("bt1").style.visibility = "visible"
+            }
+        </script>
+    </body>
+
+</html>
