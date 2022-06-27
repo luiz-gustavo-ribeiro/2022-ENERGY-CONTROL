@@ -37,6 +37,11 @@ def new():
     return render_template('new.html')
 
 
+@app.route("/cep")
+def CEP():
+   return render_template("cep.html")
+
+
 @app.route("/resp")
 def resp():
     equipamentos = Equipamento.query.all()
