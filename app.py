@@ -2,6 +2,9 @@ from flask import Flask, render_template, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
 from sqlalchemy import desc
+import json
+import requests
+#import viacep
 
 
 app = Flask(__name__)
@@ -37,10 +40,23 @@ def new():
     return render_template('new.html')
 
 
-@app.route("/cep")
-def CEP():
-   return render_template("cep.html")
+#@app.route('/cep', methods=['POST'])
+#def CEP():
+#    d_cep = request.form['cep']
+#    d = viacep.ViaCEP(d_cep)
+#    dados_json = d.getDadosCEP()
+#
+#    cep      = dados_json['cep']
+#    rua      = (u'%s' % dados_json['logradouro'])
+#    bairro   = (u'%s' % dados_json['bairro'])
+#    cidade   = (u'%s' % dados_json['cidade'])
+#    uf       = dados_json['uf']
+#    return render_template('cep.html', cep=cep,rua=rua,bairro=bairro,cidade=cidade,uf=uf)
 
+
+@app.route('/cep')
+def CEP():
+    return render_template("cep.html")
 
 @app.route("/resp")
 def resp():

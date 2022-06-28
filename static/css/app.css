@@ -1,7 +1,8 @@
 body{
     /* background-color: #e7e6e6 - e4e3ee ;*/
     background-color:#a89c8c;
-    background-image: url(../img/self_1.svg);
+    background-image: url(./../img/self.png);
+    
     background-repeat: no-repeat;
     background-position: left 100%;
     background-size: 25%;
