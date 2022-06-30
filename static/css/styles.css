@@ -75,7 +75,7 @@ section#banner {
 }
 
 section#banner a{
-    font-size: 3vw;
+    font-size: 2vw;
     text-shadow: 2px 2px 5px #00000050;
     margin-top: 10px;
     text-decoration: none;
@@ -304,3 +304,5 @@ section#lista_equipamentos {
   
 
 /* Fim estilos da página resp.html*/
+
+
